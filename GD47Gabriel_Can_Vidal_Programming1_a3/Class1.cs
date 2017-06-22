@@ -54,13 +54,16 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
 
             // constructor
 
-            public petfight(string Gary)
+            public petfight(string Pokemon, int HitPoints, int Attack, int Defense)
         {
-            m_HitPoints = 100;
-            m_Attack = 50;
-            m_Defense = 30;
-            m_petName = Gary;
+            m_HitPoints = HitPoints;
+            m_Attack = Attack;
+            m_Defense = Defense;
+            m_petName = Pokemon;
         }
+
+       
+
 
         public void attack(petfight OtherPet)
         {
