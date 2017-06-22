@@ -69,38 +69,23 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
             Console.WriteLine("2. Take a deep breath(Heal)");
 
             Console.WriteLine("-------------------------------------------");
-            string userInput = Console.ReadLine();
-            int Input;
+            int inputPlayer = getUserInputAsInteger(1,2);
 
-            bool success = int.TryParse(userInput, out Input);
-            //Repeat untill the player uses a correct input.
-            while (success == false || Input >= 6)
+
+
+
+            if (inputPlayer == 1)
             {
-                Console.WriteLine("That's not a valid option.");
-                Console.WriteLine("Try again.");
-                Console.ReadLine();
+                attacker.attack(defender);
 
-                break;
+
             }
-            while (true)
-
-
-
-                if (userInput == "1")
-                {
-                    attacker.attack(defender);
-                    
-
-
-                }
-            if (userInput == "2")
+            if (inputPlayer == 2)
             {
                 attacker.Potion();
-                
 
 
             }
-           
 
 
         }
@@ -122,7 +107,50 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
             Console.WriteLine("Enemy Health: " + gary.m_HitPoints);
             Console.WriteLine("-------------------------------------------");
         }
-        
-        
+
+        // Function to take input, transform string to parse and check min or max amount
+        private static int getInput(int min, int max)
+        {
+            int parseInput = 0;
+            while (true)
+            {
+
+                string input = Console.ReadLine();
+                bool isParsedCorrectly = int.TryParse(input, out parseInput);
+
+                if (isParsedCorrectly && parseInput >= min && parseInput <= max)
+                {
+                    break;
+                }
+            }
+
+            return parseInput;
+        }
+        //creating a new static integer to create an imput limit to avoid characters and "impossible" numbers
+        static int getUserInputAsInteger(int min, int max)
+        {
+            //setting the string "number" = 0
+            int number = 0;
+
+            //creating a loop to avoid invalid imputs
+            while (true)
+            {
+                
+                //creating a string and a bool to only accept int imputs
+                string sInput = Console.ReadLine();
+                //try to convert the imput to an integer
+                bool isNumber = int.TryParse(sInput, out number);
+                //if the imput is not valid break the loop
+                if (isNumber && number >= min && number <= max)
+                {
+                    //breaking the loop
+                    break;
+                }
+                //write down the "invalid imput" text
+                Console.WriteLine("Hey Banjo, I can't do that. Choose a valid option!");
+            }
+            //return to "number"
+            return number;
+        }
     }
 }
