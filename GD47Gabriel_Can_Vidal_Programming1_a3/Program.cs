@@ -17,20 +17,39 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
             // print back story lines
             Console.WriteLine("What a journey it was...");
             Console.WriteLine("You think to yourslef as you walk down the stairs of the arena.");
+            
+           
             Console.WriteLine("You never thought you would make it this far. Making so many friends and seeing so many Pokemons along the way.");
             Console.WriteLine("And so many enemies... Yeah like those Team Rocket morons. You wonder what happened to them.");
+            Console.ReadLine();
+            Console.Clear();
+
             Console.WriteLine("The last time you saw them they were in an explosion. You don't think anyone can survive that.");
             Console.WriteLine("But like some comedic relief or lazy writing they always come back. It's unnatural!");
+            
+
             Console.WriteLine("What if that's it? What if your whole life is an animated japanese TV show for kids and really weird adults...");
             Console.WriteLine("Everything you have been through... Every challenge you faced... Every heartbreak...");
+            Console.ReadLine();
+            Console.Clear();
+
             Console.WriteLine("They were all some sick bastard's sense of fun? Did your life have any meaning at all?");
             Console.WriteLine("Is that why you are at the age of 10 for 20 years?");
+           
+
             Console.WriteLine("You don't realise the footsteps behind you as you question your whole existence.");
             Console.WriteLine("\"Oh look it's that loser Ash!\" ");
+            Console.ReadLine();
+            Console.Clear();
+
             Console.WriteLine("You would recognise that annoying voice anywhere. It snaps you out of your little moment of enlightenment.");
             Console.WriteLine("You turn around to face your old nemesis Gary Oak.");
+            
+
             Console.WriteLine("\"I thought they didn't let little kids in to this place. No matter you can be one of my cheerleaders\"");
             Console.WriteLine("Oh it is on!");
+            Console.ReadLine();
+            Console.Clear();
 
             // Players pet constructor
             petfight oGary = new petfight("Gary", 100, 60, 40);
@@ -42,7 +61,7 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
             {
 
 
-
+                //call functions
                 newRound(oAsh, oGary);
                 battle(oAsh, oGary);
                 battleGary(oGary, oAsh);
@@ -51,7 +70,7 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
 
 
 
-
+                //gameplay end
                 if (oGary.m_HitPoints == 0 || oAsh.m_HitPoints == 0)
                 {
                     gameRunning = false;
@@ -64,6 +83,7 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
 
 
         }
+        //function to player attack
         static void battle(petfight attacker, petfight defender)
         {
 
@@ -93,6 +113,7 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
 
 
         }
+        //function to enemy pet attack
         static void battleGary(petfight attacker, petfight defender)
         {
             Console.ReadLine();
@@ -102,6 +123,7 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
             attacker.attack(defender);
             Console.WriteLine("-------------------------------------------");
         }
+        // function to print information
         static void newRound(petfight ash, petfight gary)
         {
             Console.ReadLine();
@@ -112,24 +134,7 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
             Console.WriteLine("-------------------------------------------");
         }
 
-        // Function to take input, transform string to parse and check min or max amount
-        private static int getInput(int min, int max)
-        {
-            int parseInput = 0;
-            while (true)
-            {
-
-                string input = Console.ReadLine();
-                bool isParsedCorrectly = int.TryParse(input, out parseInput);
-
-                if (isParsedCorrectly && parseInput >= min && parseInput <= max)
-                {
-                    break;
-                }
-            }
-
-            return parseInput;
-        }
+        
         //creating a new static integer to create an imput limit to avoid characters and "impossible" numbers
         static int getUserInputAsInteger(int min, int max)
         {
@@ -151,7 +156,7 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
                     break;
                 }
                 //write down the "invalid imput" text
-                Console.WriteLine("Hey Banjo, I can't do that. Choose a valid option!");
+                Console.WriteLine("That's impossible. Choose a valid option!");
             }
             //return to "number"
             return number;
