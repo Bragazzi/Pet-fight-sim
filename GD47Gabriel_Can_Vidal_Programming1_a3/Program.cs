@@ -10,9 +10,11 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
     {
         static void Main(string[] args)
         {
+            // bool to check if the game is running
             bool gameRunning;
             gameRunning = true;
 
+            // print back story lines
             Console.WriteLine("What a journey it was...");
             Console.WriteLine("You think to yourslef as you walk down the stairs of the arena.");
             Console.WriteLine("You never thought you would make it this far. Making so many friends and seeing so many Pokemons along the way.");
@@ -30,10 +32,12 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
             Console.WriteLine("\"I thought they didn't let little kids in to this place. No matter you can be one of my cheerleaders\"");
             Console.WriteLine("Oh it is on!");
 
-
+            // Players pet constructor
             petfight oGary = new petfight("Gary", 100, 60, 40);
-
+            //enemy pet constructor
             petfight oAsh = new petfight("Ash", 100, 50, 50);
+
+            // gameplay loop       
             while (gameRunning)
             {
 
