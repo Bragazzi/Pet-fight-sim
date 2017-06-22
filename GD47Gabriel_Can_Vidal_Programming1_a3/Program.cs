@@ -10,6 +10,7 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

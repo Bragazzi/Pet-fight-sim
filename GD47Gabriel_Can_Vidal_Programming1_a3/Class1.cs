@@ -64,7 +64,7 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
 
         public void attack(petfight OtherPet)
         {
-            OtherPet.receiveattack(m_Attack); //m_petName.m_GaryHitPoints -= m_GaryAttack - m_GaryDefense;
+            OtherPet.receiveattack(m_Attack); 
         }
             
 
@@ -77,7 +77,14 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
 
         }
         
-        public void Potion(int )
+        public void Potion(int HitPointsValue)
+        {
+            m_HitPoints += 30;
+            if (m_HitPoints >= 100)
+            {
+                m_HitPoints = 100;
+            }
+        }
 
 
 
