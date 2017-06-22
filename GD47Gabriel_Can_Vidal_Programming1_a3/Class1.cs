@@ -61,10 +61,23 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
             m_Defense = 30;
             m_petName = Gary;
         }
+
+        public void attack(petfight OtherPet)
+        {
+            OtherPet.receiveattack(m_Attack); //m_petName.m_GaryHitPoints -= m_GaryAttack - m_GaryDefense;
+        }
             
 
-        
+        public void receiveattack(int AttackValue)
+        {
+            if (AttackValue > m_Defense)
+            {
+                m_HitPoints -= AttackValue - m_Defense;
+            }
 
+        }
+        
+        public void Potion(int )
 
 
 
