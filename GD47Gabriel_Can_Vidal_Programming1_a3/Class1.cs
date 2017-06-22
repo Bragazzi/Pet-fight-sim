@@ -8,10 +8,10 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
 {
     class petfight
     {
-        private int m_Attack;
-        private int m_Defense;
-        private int m_HitPoints;
-        private string m_petName;
+        public int m_Attack;
+        public int m_Defense;
+        public int m_HitPoints;
+        public string m_petName;
 
         public int Attack
         {
@@ -75,16 +75,24 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
         {
             if (AttackValue > m_Defense)
             {
+                Console.WriteLine("Attack Success!");
                 m_HitPoints -= AttackValue - m_Defense;
+
+            
+            }
+            else
+                    {
+                Console.WriteLine("Attack Failed!");
             }
 
         }
         
-        public void Potion(int HitPointsValue)
+        public void Potion()
         {
             m_HitPoints += 30;
             if (m_HitPoints >= 100)
             {
+                Console.WriteLine("Wow you healed. Are you a coward?");
                 m_HitPoints = 100;
             }
         }
@@ -95,4 +103,4 @@ namespace GD47Gabriel_Can_Vidal_Programming1_a3
 
     }
     }
-}
+
